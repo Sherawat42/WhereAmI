@@ -1,4 +1,4 @@
-package com.example.sherawat42.whereami;
+package com.example.sherawat42.whereami.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +19,8 @@ import android.view.View;
 import com.activeandroid.ActiveAndroid;
 import com.activeandroid.query.Select;
 import com.example.sherawat42.whereami.Adapters.MainActivityAdapter;
+import com.example.sherawat42.whereami.MyDataTypes.LocationReminderObject;
+import com.example.sherawat42.whereami.R;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.sherawat42.whereami;
+package com.example.sherawat42.whereami.MyDataTypes;
 
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
@@ -11,13 +11,13 @@ import com.activeandroid.annotation.Table;
 public class LocationReminderObject extends Model {
 
     @Column(name="location_type")
-    String loc_type;
+    public String loc_type;
 
     @Column(name="description")
-    String description;
+    public String description;
 
     @Column(name="done")
-    Boolean done = false;
+    public Boolean done = false;
 
 
     public LocationReminderObject(){super();}

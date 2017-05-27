@@ -1,4 +1,4 @@
-package com.example.sherawat42.whereami;
+package com.example.sherawat42.whereami.MyDataTypes;
 
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;

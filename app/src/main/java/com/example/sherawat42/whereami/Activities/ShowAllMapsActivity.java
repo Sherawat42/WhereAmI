@@ -1,4 +1,4 @@
-package com.example.sherawat42.whereami;
+package com.example.sherawat42.whereami.Activities;
 
 import android.Manifest;
 import android.content.Context;
@@ -14,6 +14,9 @@ import android.support.v4.app.FragmentActivity;
 import android.widget.Toast;
 
 import com.activeandroid.query.Select;
+import com.example.sherawat42.whereami.MyDataTypes.LocationReminderObject;
+import com.example.sherawat42.whereami.MyDataTypes.MyLocation;
+import com.example.sherawat42.whereami.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;

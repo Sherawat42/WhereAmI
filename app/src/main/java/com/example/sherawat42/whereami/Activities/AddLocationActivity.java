@@ -1,4 +1,4 @@
-package com.example.sherawat42.whereami;
+package com.example.sherawat42.whereami.Activities;
 
 import android.Manifest;
 import android.content.Context;
@@ -18,6 +18,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.activeandroid.query.Select;
+import com.example.sherawat42.whereami.MyDataTypes.LocationReminderObject;
+import com.example.sherawat42.whereami.MyDataTypes.MyLocation;
+import com.example.sherawat42.whereami.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
@@ -151,6 +154,7 @@ public class AddLocationActivity extends FragmentActivity implements OnMapReadyC
             return;
         }
         mLastKnownLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+        //to display the last known location
         Toast.makeText(this, String.valueOf(mLastKnownLocation), Toast.LENGTH_SHORT).show();
         startLocationUpdates();
         //code to initialize the marker with current location!

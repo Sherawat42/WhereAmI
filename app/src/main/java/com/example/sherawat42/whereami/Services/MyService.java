@@ -1,4 +1,4 @@
-package com.example.sherawat42.whereami;
+package com.example.sherawat42.whereami.Services;
 
 import android.app.Service;
 import android.content.Context;
@@ -11,6 +11,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.activeandroid.query.Select;
+import com.example.sherawat42.whereami.MyDataTypes.LocationReminderObject;
+import com.example.sherawat42.whereami.MyDataTypes.MyLocation;
 
 import java.util.List;
 

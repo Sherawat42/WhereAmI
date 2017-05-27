@@ -1,9 +1,12 @@
-package com.example.sherawat42.whereami;
+package com.example.sherawat42.whereami.Adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.sherawat42.whereami.MyDataTypes.LocationReminderObject;
+import com.example.sherawat42.whereami.R;
 
 import java.util.List;
 
@@ -13,7 +16,7 @@ import cyd.awesome.material.AwesomeText;
  * Created by sherawat42 on 3/5/17.
  */
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapter.ViewHolder> {
     List<LocationReminderObject> myDataset;
     private int mExpandedPosition = -1;
 
@@ -34,14 +37,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<LocationReminderObject> myDataset) {
+    public MainActivityAdapter(List<LocationReminderObject> myDataset) {
         this.myDataset = myDataset;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                   int viewType) {
+    public MainActivityAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+                                                             int viewType) {
         // create a new view
         View v =  LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.main_list, parent, false);

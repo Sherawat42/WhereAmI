@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.sherawat42.whereami.AddReminderActivity"
+    tools:context="com.example.sherawat42.whereami.Activities.AddReminderActivity"
     tools:showIn="@layout/activity_add_reminder">
 
     <cyd.awesome.material.AwesomeButton
