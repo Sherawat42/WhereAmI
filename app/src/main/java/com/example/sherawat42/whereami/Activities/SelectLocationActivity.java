@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.activeandroid.query.Select;
+import com.example.sherawat42.whereami.Adapters.SelectLocationAdapter;
 
 import java.util.LinkedHashSet;
 import java.util.List;

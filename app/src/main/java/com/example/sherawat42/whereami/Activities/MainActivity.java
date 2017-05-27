@@ -18,6 +18,7 @@ import android.view.View;
 
 import com.activeandroid.ActiveAndroid;
 import com.activeandroid.query.Select;
+import com.example.sherawat42.whereami.Adapters.MainActivityAdapter;
 
 import java.util.List;
 
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity
 
 
         // specify an adapter (see also next example)
-        mAdapter = new MyAdapter(myDataset);
+        mAdapter = new MainActivityAdapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
 
