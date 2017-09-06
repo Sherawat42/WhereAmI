@@ -21,6 +21,7 @@ import com.activeandroid.query.Select;
 import com.example.sherawat42.whereami.Adapters.MainActivityAdapter;
 import com.example.sherawat42.whereami.MyDataTypes.LocationReminderObject;
 import com.example.sherawat42.whereami.R;
+import com.example.sherawat42.whereami.Services.MyService;
 
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    private MainActivityAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     List<LocationReminderObject> myDataset;
 
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Add Some Functionality Here!!", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -52,11 +53,14 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+//        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
 
 
         ActiveAndroid.initialize(this);
@@ -66,7 +70,7 @@ public class MainActivity extends AppCompatActivity
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
-        mRecyclerView.setHasFixedSize(true);
+//        mRecyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
         mLayoutManager = new LinearLayoutManager(this);
@@ -79,7 +83,7 @@ public class MainActivity extends AppCompatActivity
         mAdapter.notifyDataSetChanged();
 
 
-//        startService(new Intent(this, MyService.class));
+        startService(new Intent(this, MyService.class));
 
 
 //        List<MyLocation> myLocationList = new Select().from(MyLocation.class).execute();
@@ -94,6 +98,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
+        myDataset = new Select().from(LocationReminderObject.class).execute();
+        mAdapter.myDataset = myDataset;
         mAdapter.notifyDataSetChanged();
     }
 

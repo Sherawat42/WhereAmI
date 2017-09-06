@@ -183,7 +183,7 @@ public class ShowAllMapsActivity extends FragmentActivity implements OnMapReadyC
         LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, locationRequest, new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                Toast.makeText(ShowAllMapsActivity.this, String.valueOf(location), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ShowAllMapsActivity.this, String.valueOf(location), Toast.LENGTH_SHORT).show();
                 LatLng mylatlng = new LatLng(location.getLatitude(),location.getLongitude());
                 for(int j=0;j<my_locs.size();j++){
                     LatLng latLng = new LatLng(my_locs.get(j).getLatitude(), my_locs.get(j).getLongitude());

@@ -17,7 +17,7 @@ import cyd.awesome.material.AwesomeText;
  */
 
 public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapter.ViewHolder> {
-    List<LocationReminderObject> myDataset;
+    public List<LocationReminderObject> myDataset;
     private int mExpandedPosition = -1;
 
     // Provide a reference to the views for each data item

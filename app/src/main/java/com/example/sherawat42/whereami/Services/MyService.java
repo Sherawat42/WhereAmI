@@ -24,7 +24,7 @@ public class MyService extends Service
 {
     private static final String TAG = "BOOMBOOMTESTGPS";
     private LocationManager mLocationManager = null;
-    private static final int LOCATION_INTERVAL = 2;
+    private static final int LOCATION_INTERVAL = 30000;
     private static final float LOCATION_DISTANCE = 0.00001f;
 
     private class LocationListener implements android.location.LocationListener
@@ -39,13 +39,14 @@ public class MyService extends Service
             Log.e(TAG, "LocationListener " + provider);
             mLastLocation = new Location(provider);
             Log.i(TAG, "LocationListener:"+ mLastLocation.toString());
-            Toast.makeText(getApplicationContext(),mLastLocation.toString(),Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getApplicationContext(),mLastLocation.toString(),Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onLocationChanged(Location location)
         {
             Log.e(TAG, "onLocationChanged: " + location);
+            Toast.makeText(getApplicationContext(), location.toString(), Toast.LENGTH_LONG);
             mLastLocation.set(location);
         }
 

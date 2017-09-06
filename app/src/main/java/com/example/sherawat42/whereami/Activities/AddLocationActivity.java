@@ -169,7 +169,7 @@ public class AddLocationActivity extends FragmentActivity implements OnMapReadyC
             LatLng latLng = new LatLng(28.5921,77.0460);
             marker = mMap.addMarker(new MarkerOptions().position(latLng).title("Drag the marker to location"));
             marker.setDraggable(true);
-            CameraUpdate cam = CameraUpdateFactory.newLatLngZoom(latLng, 15);
+            CameraUpdate cam = CameraUpdateFactory.newLatLngZoom(latLng, 14);
             mMap.animateCamera(cam);
             selectedLocation = latLng;
         }
@@ -209,16 +209,16 @@ public class AddLocationActivity extends FragmentActivity implements OnMapReadyC
         LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, locationRequest, new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
-                Toast.makeText(AddLocationActivity.this, String.valueOf(location), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(AddLocationActivity.this, String.valueOf(location), Toast.LENGTH_SHORT).show();
                 LatLng mylatlng = new LatLng(location.getLatitude(),location.getLongitude());
-                    for(int j=0;j<my_locs.size();j++){
-                        LatLng latLng = new LatLng(my_locs.get(j).getLatitude(), my_locs.get(j).getLongitude());
-                        float[] results = new float[10];
-                        Location.distanceBetween(latLng.latitude,latLng.longitude, mylatlng.latitude, mylatlng.longitude, results);
-                        if(results[0] < 1000 ){
-                            Toast.makeText(getApplicationContext(), "You are near" + my_locs.get(j).getName(), Toast.LENGTH_SHORT);
-                        }
+                for(int j=0;j<my_locs.size();j++){
+                    LatLng latLng = new LatLng(my_locs.get(j).getLatitude(), my_locs.get(j).getLongitude());
+                    float[] results = new float[3];
+                    Location.distanceBetween(latLng.latitude,latLng.longitude, mylatlng.latitude, mylatlng.longitude, results);
+                    if(results[0] < 1000 ){
+                        Toast.makeText(getApplicationContext(), "You are near" + my_locs.get(j).getName(), Toast.LENGTH_SHORT);
                     }
+                }
             }
         });
     }
